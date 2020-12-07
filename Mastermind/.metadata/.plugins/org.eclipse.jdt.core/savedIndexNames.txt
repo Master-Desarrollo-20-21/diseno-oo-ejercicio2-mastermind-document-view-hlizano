@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/home/eduardo/Documents/00 MASTER DESARROLLO SOFTWARE/02 Análisis y Diseño/2 Diseño Modular/diseno-oo-ejercicio2-mastermind-document-view-hlizano/Mastermind/.metadata/.plugins/org.eclipse.jdt.core
+646308851.index
+3994795867.index
