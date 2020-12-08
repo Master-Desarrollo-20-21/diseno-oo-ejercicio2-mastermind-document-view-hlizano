@@ -1,20 +1,20 @@
 package com.escuelait;
 
 import com.escuelait.models.Game;
-import com.escuelait.views.View;
+import com.escuelait.views.GameView;
 
 public class Mastermind {
 	
 	private Game game;
-	private View view;
+	private GameView gameView;
 
 	public Mastermind() {
 		this.game = new Game();
-		this.view = new View(this.game);
+		this.gameView = new GameView(this.game);
 	}
 
 	public void play() {
-		this.view.interact();		
+		this.gameView.interact();		
 	}
 
 	public static void main(String[] args) {

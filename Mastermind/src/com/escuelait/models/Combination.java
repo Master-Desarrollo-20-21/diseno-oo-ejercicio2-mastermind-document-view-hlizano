@@ -1,8 +1,10 @@
 package com.escuelait.models;
 
 public class Combination {
+	
 	protected String colors;
 
+	private static final int WIDTH = 4;
 	public Combination() {
 		colors = new String("");
 	}
@@ -15,4 +17,7 @@ public class Combination {
 		return colors;
 	}
 	
+    public int getWidth() {
+        return Combination.WIDTH;
+    }
 }

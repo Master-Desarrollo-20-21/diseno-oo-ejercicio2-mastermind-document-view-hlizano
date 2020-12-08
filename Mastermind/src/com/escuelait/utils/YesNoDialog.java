@@ -1,6 +1,4 @@
-package com.escuelait.utilis;
-
-import com.escuelait.utils.Console;
+package com.escuelait.utils;
 
 public class YesNoDialog {
 	private static final char AFFIRMATIVE = 'y';

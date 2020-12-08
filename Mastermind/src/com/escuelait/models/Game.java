@@ -1,43 +1,51 @@
 package com.escuelait.models;
 
+import com.escuelait.utils.Result;
+
 public class Game {
 
-	private Board board;
-
+	private int attempt;
+	private SecretCombination secretCombination;
+	private ProposedCombination[] proposedCombinations;	
+	
+	private static final int MAX_ATTEMPTS = 10;
+	
 	public Game() {
-		board = new Board();
+		this.initialize();
 	}
-	
-	public Board getBoard() {
-		return board;
+
+	private void initialize() {
+		secretCombination = new SecretCombination();
+		proposedCombinations = new ProposedCombination[MAX_ATTEMPTS];
+		attempt = 0;
 	}
-	
+
+	public void processProposedCombination(ProposedCombination proposedCombination) {
+		Result result = secretCombination.compareCombination(proposedCombination);
+		proposedCombination.setWhites(result.getWhites());
+		proposedCombination.setBlacks(result.getBlacks());
+		proposedCombinations[attempt] = proposedCombination;
+		attempt++;
+	}
+
 	public int getAttempts() {
-		return board.getAttempts();
+		return attempt;
+	}
+
+//	METODO QUE SE USA SÓLO PARA TESTING
+//	public String getSecretCombination() { 
+//		return this.secretCombination.getColors();}
+//
+	public ProposedCombination getProposedCombination(int i) {		
+		return this.proposedCombinations[i];
 	}
 	
-	public String getSecretCombination(){ 
-		return board.getSecretCombination();
-	}
-
-	public ProposalCombination getProposalCombination(int i) {		
-		return board.getProposalCombination(i);
-	}
-
-	public void setProposalColors(String colors) {
-		board.setColors(colors);		
-	}
-
-	public void processProposalCombination() {
-		board.processProposalCombination();		
-	}
-
 	public int getMaxAttempts() {
-		return board.getMaxAttempts();
+		return MAX_ATTEMPTS;
 	}
 
 	public void reset() {
-		board = new Board();		
+		this.initialize();;		
 	}
 
 }

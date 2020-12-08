@@ -1,27 +1,23 @@
 package com.escuelait.views;
 
 import com.escuelait.models.Game;
-import com.escuelait.utils.Console;
 
-public class GameView {
-	
-	private Game game;
+public class GameView extends View{
+
+	private PlayView playView;
+	private ResumeView resumeView;
 
 	public GameView(Game game) {
-	    this.game = game;
+		super(game);
+		this.playView = new PlayView(game);	
+		this.resumeView = new ResumeView(game);
 	}
 
-	public void write() {
-		Console.getInstance().writeln(Message.TITLE.toString());
-		int attempt = game.getAttempts();
-		for (int i = 0; i<attempt; i++) {
-			Console.getInstance().writeln(i + Message.ATTEMPTS.toString());
-			Console.getInstance().write(game.getSecretCombination());
-			Console.getInstance().writeln(Message.TOOLTIP.toString());
-	
-			if (attempt > 0) {	
-				Console.getInstance().writeln(game.getProposalCombination(i).toString());
-			}
-		}
+	@Override
+	public void interact() {
+		do {
+			this.playView.interact();
+		} while (this.resumeView.interact());  //isResumed()?		
 	}
+
 }

@@ -1,15 +1,24 @@
 package com.escuelait.views;
 
 import com.escuelait.models.Color;
-import com.escuelait.models.ProposalCombination;
+import com.escuelait.models.ProposedCombination;
 import com.escuelait.utils.Console;
 
-public class ProposalCombinationView {
+public class ProposedCombinationView {
+	
+	ProposedCombination proposedCombination;
+	
+	public ProposedCombinationView() {
+		this.proposedCombination = new ProposedCombination();
+	}
+	
+	public ProposedCombinationView(ProposedCombination proposedCombination) {
+		this.proposedCombination = proposedCombination;
+	}
 
-	public ProposalCombination read(String title) {
+	public ProposedCombination read(String title) {
 		boolean isValid = false;
 		Console console = Console.getInstance();
-		ProposalCombination proposalCombination = new ProposalCombination();
 		String colors = "";
 		
 		do {			
@@ -18,8 +27,8 @@ public class ProposalCombinationView {
 			isValid = this.checkProposalCombination(colors);
 		}while (!isValid);
 		
-		proposalCombination.setColors(colors);		
-		return proposalCombination;
+		proposedCombination.setColors(colors);		
+		return proposedCombination;
 	}	
 	
 	public boolean checkProposalCombination(String colors) {
@@ -50,6 +59,13 @@ public class ProposalCombinationView {
 			}			
 		}		
 		return isValid;
+	}
+
+	public void write() {
+		String colors = proposedCombination.getColors();
+		int whites = proposedCombination.getWhites();
+		int blacks = proposedCombination.getBlacks();
+		Console.getInstance().writeln(colors + " --> " + blacks + " blacks " + "and " + whites + " whites");
 	}
 
 }

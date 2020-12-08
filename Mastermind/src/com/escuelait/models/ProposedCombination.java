@@ -1,29 +1,36 @@
 package com.escuelait.models;
 
-public class ProposalCombination extends Combination {
+public class ProposedCombination extends Combination {
 
 	private int whites;
 	private int blacks;
 	
-	public ProposalCombination(String colors, int blacks, int whites) {
+	public ProposedCombination(String colors, int blacks, int whites) {
 		this.colors = colors;
 		this.blacks = blacks;
 		this.whites = whites;
 	}
 
-	public ProposalCombination() {
+	public ProposedCombination() {
 		this.colors = "";
 		this.blacks = 0;
 		this.whites = 0;
 	}
 
-	@Override
-	public String toString() {
-		return colors + " --> " + blacks + " blacks " + "and " + whites + " whites";
+	public int getWhites() {
+		return this.whites;
 	}
-
+	
 	public int getBlacks() {
 		return this.blacks;
+	}
+	
+	public void setWhites(int whites) {
+		this.whites = whites;
+	}
+	
+	public void setBlacks(int blacks) {
+		this.blacks = blacks;
 	}
 	
 	public void setColors(String colors) {
