@@ -5,18 +5,19 @@ import com.escuelait.models.ProposedCombination;
 import com.escuelait.utils.Console;
 import com.escuelait.utils.YesNoDialog;
 
-public class ResumeView extends View{
+public class ResumeView {
+	
+	private Game game;
 
 	public ResumeView(Game game) {
-		super(game);
+	    this.game = game;
 	}
 
-	public boolean interact() {
-		boolean isResumed = new YesNoDialog().read(Message.RESUME.toString());
-		if (isResumed){
+	public boolean isResume() {
+		boolean resume = new YesNoDialog().read(Message.RESUME.toString());
+		if (resume){
 			this.game.reset();
 		}
-		return isResumed;
+		return resume;
 	}
-
 }

@@ -28,7 +28,7 @@ public class Game {
 		attempt++;
 	}
 
-	public int getAttempts() {
+	public int getAttempt() {
 		return attempt;
 	}
 
@@ -40,12 +40,20 @@ public class Game {
 		return this.proposedCombinations[i];
 	}
 	
-	public int getMaxAttempts() {
-		return MAX_ATTEMPTS;
-	}
-
 	public void reset() {
 		this.initialize();;		
+	}
+
+	public String gameStatus() {
+
+		ProposedCombination proposedCombination = this.getProposedCombination(attempt-1);
+		if(proposedCombination.getBlacks() == proposedCombination.getWidth()) {				
+			return "WIN";
+		}
+		if(attempt > MAX_ATTEMPTS) {			
+			return "LOOSE";
+		}
+		return "ONGOING";		
 	}
 
 }

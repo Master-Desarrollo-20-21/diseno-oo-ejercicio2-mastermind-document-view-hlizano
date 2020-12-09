@@ -12,28 +12,25 @@ public class PlayView extends View{
 	
 	@Override
 	public void interact() {
+		Console.getInstance().writeln(Message.TITLE.toString());
 	    do {
-			new BoardView(this.game).write();
+			new AttemptView(this.game).write();
 			ProposedCombination proposedCombination = new ProposedCombinationView().read(Message.PROPOSE_COMBINATION.toString());	
 			game.processProposedCombination(proposedCombination);
-		}while(!this.gameEnded());
+		}while(!this.isGameEnded());
 	}
 
-	private boolean gameEnded() {
-		int attempt = this.game.getAttempts();
-		int MAX_ATTEMPTS = this.game.getMaxAttempts();
-		ProposedCombination proposedCombination = this.game.getProposedCombination(attempt-1);
-		if(proposedCombination.getBlacks() == proposedCombination.getWidth()) {	
+	private boolean isGameEnded() {
+		
+		String status = game.gameStatus();
+		if(status.equals("WIN")) {	
 			Console.getInstance().writeln(Message.PLAYER_WIN.toString());
 			return true;
 		}
-		if(attempt==MAX_ATTEMPTS) {
+		if(status.equals("LOOSE")) {
 			Console.getInstance().writeln(Message.PLAYER_LOST.toString());
 			return true;
 		}
 		return false;
 	}
-
-
-
 }

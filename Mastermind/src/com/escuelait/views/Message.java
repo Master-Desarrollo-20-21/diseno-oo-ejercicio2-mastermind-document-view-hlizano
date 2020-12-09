@@ -3,7 +3,6 @@ package com.escuelait.views;
 enum Message {
 	TITLE("--- MASTERMIND ---"),
 	ATTEMPTS(" attempt(s):"), 
-	TOOLTIP("  <-- xxxx secret for tests"),
 	SECRET_COMBINATION("****"),
 	PROPOSE_COMBINATION("Propose a combination:"), 
 	WRONG_PROPOSED_COMBINATION_LENGTH("Wrong proposed combination length"), 

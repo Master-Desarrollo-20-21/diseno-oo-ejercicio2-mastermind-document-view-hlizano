@@ -19,15 +19,15 @@ public class ProposedCombinationView {
 	public ProposedCombination read(String title) {
 		boolean isValid = false;
 		Console console = Console.getInstance();
-		String colors = "";
+		String proposedCombinationColors = "";
 		
 		do {			
-			console.writeln(title);
-			colors = console.readString().toLowerCase();
-			isValid = this.checkProposalCombination(colors);
+			console.write(title);
+			proposedCombinationColors = console.readString().toLowerCase();
+			isValid = this.checkProposalCombination(proposedCombinationColors);
 		}while (!isValid);
-		
-		proposedCombination.setColors(colors);		
+		console.writeln("");
+		proposedCombination.setProposedCombinationColors(proposedCombinationColors);		
 		return proposedCombination;
 	}	
 	

@@ -19,7 +19,8 @@ public class SecretCombination extends Combination {
 	}
 	
 	public Result compareCombination(Combination proposed) {		
-		int whites = 0, blacks = 0;
+		int whites = 0;
+		int blacks = 0;
 		for(int i = 0; i<this.getWidth(); i++) {
 			char colorProposed = proposed.getColors().charAt(i);
 			for(int j = 0; j<this.getWidth(); j++) {	

@@ -17,7 +17,7 @@ public class GameView extends View{
 	public void interact() {
 		do {
 			this.playView.interact();
-		} while (this.resumeView.interact());  //isResumed()?		
+		} while (this.resumeView.isResume());
 	}
 
 }

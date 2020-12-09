@@ -33,7 +33,7 @@ public class ProposedCombination extends Combination {
 		this.blacks = blacks;
 	}
 	
-	public void setColors(String colors) {
+	public void setProposedCombinationColors(String colors) {
 		this.colors = colors;
 	}
 }
