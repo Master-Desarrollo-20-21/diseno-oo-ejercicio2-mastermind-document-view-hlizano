@@ -8,12 +8,12 @@ public class Mastermind {
 	private Game game;
 	private GameView gameView;
 
-	public Mastermind() {
+	private Mastermind() {
 		this.game = new Game();
 		this.gameView = new GameView(this.game);
 	}
 
-	public void play() {
+	private void play() {
 		this.gameView.interact();		
 	}
 

@@ -17,8 +17,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="/home/eduardo/Documents/00 MASTER DESARROLLO SOFTWARE/02 Análisis y Diseño/2 Diseño Modular/Tic-Tac-Toe/solution.java.swing.socket.sql-master/documentView/console"/>
 			<item value="/home/eduardo/Documents/00 MASTER DESARROLLO SOFTWARE/02 Análisis y Diseño/2 Diseño Modular/diseno-oo-ejercicio2-mastermind-document-view-hlizano/Mastermind"/>
+			<item value="/home/eduardo/Documents/00 MASTER DESARROLLO SOFTWARE/02 Análisis y Diseño/2 Diseño Modular/Tic-Tac-Toe/solution.java.swing.socket.sql-master/documentView/console"/>
 			<item value="/home/eduardo/Documents/00 MASTER DESARROLLO SOFTWARE/02 Análisis y Diseño/2 Diseño Modular/diseno-oo-ejercicio2-mastermind-document-view-hlizano"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

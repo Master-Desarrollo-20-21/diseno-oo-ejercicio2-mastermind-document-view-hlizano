@@ -4,18 +4,19 @@ import com.escuelait.utils.Result;
 
 public class SecretCombination extends Combination {
 	
-	public SecretCombination() {				
+	public SecretCombination() {	
+		StringBuilder bld = new StringBuilder();			
 		for (int i = 0; i < 4; i++) {
-			String color = "";
-			color += Color.getRandomColor();
+			String color = Color.getRandomColor();
 			for(int j = 0; j<i; j++) {
 				String colorList = String.valueOf(this.colors.charAt(j));
 				while(color.equals(colorList)) {
 					color = Color.getRandomColor();
 				} 		
 			}	
-			this.colors += color;
+			bld.append(color);
 		}
+		this.colors = bld.toString();
 	}
 	
 	public Result compareCombination(Combination proposed) {		

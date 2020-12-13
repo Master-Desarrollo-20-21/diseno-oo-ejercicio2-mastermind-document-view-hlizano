@@ -24,14 +24,14 @@ public class ProposedCombinationView {
 		do {			
 			console.write(title);
 			proposedCombinationColors = console.readString().toLowerCase();
-			isValid = this.checkProposalCombination(proposedCombinationColors);
+			isValid = this.checkProposedCombination(proposedCombinationColors);
 		}while (!isValid);
 		console.writeln("");
 		proposedCombination.setProposedCombinationColors(proposedCombinationColors);		
 		return proposedCombination;
 	}	
 	
-	public boolean checkProposalCombination(String colors) {
+	public boolean checkProposedCombination(String colors) {
 		if (!checkLength(colors)) {
 			Console.getInstance().writeln(Message.WRONG_PROPOSED_COMBINATION_LENGTH.toString());
 			return false;

@@ -36,4 +36,8 @@ public class ProposedCombination extends Combination {
 	public void setProposedCombinationColors(String colors) {
 		this.colors = colors;
 	}
+
+	public boolean isWinner() {
+		return this.getBlacks() == this.getWidth();				
+	}
 }

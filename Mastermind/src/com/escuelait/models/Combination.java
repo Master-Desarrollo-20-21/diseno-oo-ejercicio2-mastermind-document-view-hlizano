@@ -6,7 +6,7 @@ public class Combination {
 
 	private static final int WIDTH = 4;
 	public Combination() {
-		colors = new String("");
+		colors = "";
 	}
 	
 	public Combination(String colors) {

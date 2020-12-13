@@ -36,24 +36,23 @@ public class Game {
 //	public String getSecretCombination() { 
 //		return this.secretCombination.getColors();}
 //
-	public ProposedCombination getProposedCombination(int i) {		
-		return this.proposedCombinations[i];
-	}
 	
 	public void reset() {
-		this.initialize();;		
+		this.initialize();		
 	}
 
 	public String gameStatus() {
-
-		ProposedCombination proposedCombination = this.getProposedCombination(attempt-1);
-		if(proposedCombination.getBlacks() == proposedCombination.getWidth()) {				
+		if(proposedCombinations[attempt-1].isWinner()){
 			return "WIN";
-		}
-		if(attempt > MAX_ATTEMPTS) {			
-			return "LOOSE";
-		}
-		return "ONGOING";		
+		}			
+		else
+			if(attempt > MAX_ATTEMPTS) {			
+				return "LOOSE";
+			}
+		return "ONGOING";	
 	}
 
+	public ProposedCombination getProposedCombination(int i) {
+		return proposedCombinations[i];
+	}
 }
