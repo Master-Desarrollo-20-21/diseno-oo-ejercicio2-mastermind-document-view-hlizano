@@ -2,22 +2,21 @@ package com.escuelait.views;
 
 import com.escuelait.models.Game;
 
-public class GameView extends View{
+public abstract class GameView extends View{
 
-	private PlayView playView;
-	private ResumeView resumeView;
-
-	public GameView(Game game) {
+	protected GameView(Game game) {
 		super(game);
-		this.playView = new PlayView(game);	
-		this.resumeView = new ResumeView(game);
 	}
 
 	@Override
 	public void interact() {
 		do {
-			this.playView.interact();
-		} while (this.resumeView.isResume());
+			this.play();
+		} while (this.isResume());
 	}
+		
+    protected abstract void play();
+
+    protected abstract boolean isResume();
 
 }

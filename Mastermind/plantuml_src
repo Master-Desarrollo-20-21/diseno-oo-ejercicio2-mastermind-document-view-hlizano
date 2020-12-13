@@ -1,0 +1,105 @@
+@startuml 
+abstract class GameView{
++ interact()
+protected abstract play()
+protected abstract isResume(): boolean
+}
+
+class Game{
+- SecretCombination secretCombination
+- ProposedCombination[] proposedCombinations
+- attempt: int
++ initialize()
++ getAttempt(): int
++ gameStatus(): String
++ processProposedCombination()
++ reset()
++ ProposedCombination getProposedCombination()
+}
+
+abstract class Mastermind{
+- game: Game
+- gameView: GameView
+protected Mastermind()
++ play()
+protected abstract createView(game): GameView
+}
+
+Mastermind *-down-> Game
+Mastermind -down->GameView
+
+class ConsoleMastermind{
+protected createView(game): ConsoleGameView
++ {static} main(String[])
+}
+
+ConsoleMastermind -up-^ Mastermind
+
+class Combination{
+- colors
+}
+
+class SecretCombination{
++ compareCombination(Combination proposed): Result
+}
+
+class ProposedCombination{
+- whites: int
+- blacks: int
++ getWhites(): int
++ getBlacks(): int
++ setWhites()
++ setBlacks()
++ setProposedCombination(String colors)
++ isWinner(): boolean
+}
+
+SecretCombination -up-^ Combination
+ProposedCombination -up-^ Combination
+
+Game --> "0..10" ProposedCombination
+Game *-down-> SecretCombination
+
+abstract class View{
+* game: Game
+abstract interact()
+}
+
+GameView -up-^ View
+
+class ConsoleGameView{
+- playView: PlayView
+- resumeView: ResumeView
+protected play()
+protected isResume(): boolean
+}
+
+ConsoleGameView -up-^ GameView
+ConsoleMastermind *-down-> ConsoleGameView
+
+class PlayView{
+
+}
+
+class AttemptView{
+
+}
+
+class ProposedCombinationView{
+
+}
+
+class ResumeView{
+}
+
+ConsoleGameView *-down-> PlayView
+ConsoleGameView *-down-> ResumeView
+
+PlayView *-down-> AttemptView
+PlayView *-down-> ProposedCombinationView
+AttemptView *-down-> ProposedCombinationView
+ProposedCombinationView *-->ProposedCombination
+
+@enduml
+
+

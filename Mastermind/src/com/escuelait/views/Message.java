@@ -1,6 +1,6 @@
 package com.escuelait.views;
 
-enum Message {
+public enum Message {
 	TITLE("--- MASTERMIND ---"),
 	ATTEMPTS(" attempt(s):"), 
 	SECRET_COMBINATION("****"),

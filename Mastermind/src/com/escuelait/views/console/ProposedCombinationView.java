@@ -1,8 +1,9 @@
-package com.escuelait.views;
+package com.escuelait.views.console;
 
 import com.escuelait.models.Color;
 import com.escuelait.models.ProposedCombination;
 import com.escuelait.utils.Console;
+import com.escuelait.views.Message;
 
 public class ProposedCombinationView {
 	

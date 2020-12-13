@@ -1,24 +1,22 @@
+
 package com.escuelait;
 
 import com.escuelait.models.Game;
 import com.escuelait.views.GameView;
 
-public class Mastermind {
+public abstract class Mastermind {
 	
 	private Game game;
 	private GameView gameView;
 
-	private Mastermind() {
+	protected Mastermind() {
 		this.game = new Game();
-		this.gameView = new GameView(this.game);
+		this.gameView = this.createView(game);
 	}
 
-	private void play() {
+	public void play() {
 		this.gameView.interact();		
 	}
 
-	public static void main(String[] args) {
-		new Mastermind().play();
-	}
-
+	protected abstract GameView createView(Game game);
 }

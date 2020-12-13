@@ -5,7 +5,7 @@ import com.escuelait.models.Game;
 public abstract class View {
 	  protected Game game;
 
-	  View(Game game) {
+	  protected View(Game game) {
 	    this.game = game;
 	  }
 	  

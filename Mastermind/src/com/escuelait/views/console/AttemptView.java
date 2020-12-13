@@ -1,7 +1,8 @@
-package com.escuelait.views;
+package com.escuelait.views.console;
 
 import com.escuelait.models.Game;
 import com.escuelait.utils.Console;
+import com.escuelait.views.Message;
 
 public class AttemptView {
 	
